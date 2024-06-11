@@ -1,0 +1,33 @@
+Fitting AutoMLPipelineFeatureGenerator...
+	Available Memory:                    10495.39 MB
+	Train Data (Original)  Memory Usage: 1.33 MB (0.0% of available memory)
+	Inferring data type of each feature based on column values. Set feature_metadata_in to manually specify special dtypes of the features.
+	Stage 1 Generators:
+		Fitting AsTypeFeatureGenerator...
+			Note: Converting 3 features to boolean dtype as they only contain 2 unique values.
+	Stage 2 Generators:
+		Fitting FillNaFeatureGenerator...
+	Stage 3 Generators:
+		Fitting IdentityFeatureGenerator...
+		Fitting CategoryFeatureGenerator...
+			Fitting CategoryMemoryMinimizeFeatureGenerator...
+	Stage 4 Generators:
+		Fitting DropUniqueFeatureGenerator...
+	Stage 5 Generators:
+		Fitting DropDuplicatesFeatureGenerator...
+	Types of features in original data (raw dtype, special dtypes):
+		('category', []) : 9 | ['V2', 'V3', 'V4', 'V5', 'V7', ...]
+		('float', [])    : 4 | ['V6', 'V12', 'V14', 'V15']
+		('int', [])      : 3 | ['V1', 'V10', 'V13']
+	Types of features in processed data (raw dtype, special dtypes):
+		('category', [])  : 6 | ['V2', 'V3', 'V4', 'V9', 'V11', ...]
+		('float', [])     : 4 | ['V6', 'V12', 'V14', 'V15']
+		('int', [])       : 3 | ['V1', 'V10', 'V13']
+		('int', ['bool']) : 3 | ['V5', 'V7', 'V8']
+	0.2s = Fit runtime
+	16 features in original data used to generate 16 features in processed data.
+	Train Data (Processed) Memory Usage: 1.33 MB (0.0% of available memory)
+Data preprocessing and feature engineering runtime = 0.29s ...
+AutoGluon will gauge predictive performance using evaluation metric: 'accuracy'
+	To change this, specify the eval_metric parameter of Predictor()
+Automatically generating train/validation split with holdout_frac=0.07899642936139287, Train Rows: 29147, Val Rows: 2500

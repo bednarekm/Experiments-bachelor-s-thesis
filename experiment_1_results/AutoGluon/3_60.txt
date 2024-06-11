@@ -1,0 +1,35 @@
+Fitting AutoMLPipelineFeatureGenerator...
+	Available Memory:                    10586.10 MB
+	Train Data (Original)  Memory Usage: 0.24 MB (0.0% of available memory)
+	Inferring data type of each feature based on column values. Set feature_metadata_in to manually specify special dtypes of the features.
+	Stage 1 Generators:
+		Fitting AsTypeFeatureGenerator...
+			Note: Converting 19 features to boolean dtype as they only contain 2 unique values.
+	Stage 2 Generators:
+		Fitting FillNaFeatureGenerator...
+	Stage 3 Generators:
+		Fitting IdentityFeatureGenerator...
+		Fitting CategoryFeatureGenerator...
+			Fitting CategoryMemoryMinimizeFeatureGenerator...
+	Stage 4 Generators:
+		Fitting DropUniqueFeatureGenerator...
+	Stage 5 Generators:
+		Fitting DropDuplicatesFeatureGenerator...
+	Useless Original Features (Count: 2): ['TBG_measured', 'TBG']
+		These features carry no predictive signal and should be manually investigated.
+		This is typically a feature which has the same value for all rows.
+		These features do not need to be present at inference time.
+	Types of features in original data (raw dtype, special dtypes):
+		('category', []) : 21 | ['sex', 'on_thyroxine', 'query_on_thyroxine', 'on_antithyroid_medication', 'sick', ...]
+		('float', [])    :  6 | ['age', 'TSH', 'T3', 'TT4', 'T4U', ...]
+	Types of features in processed data (raw dtype, special dtypes):
+		('category', [])  :  2 | ['sex', 'referral_source']
+		('float', [])     :  6 | ['age', 'TSH', 'T3', 'TT4', 'T4U', ...]
+		('int', ['bool']) : 19 | ['on_thyroxine', 'query_on_thyroxine', 'on_antithyroid_medication', 'sick', 'pregnant', ...]
+	0.3s = Fit runtime
+	27 features in original data used to generate 27 features in processed data.
+	Train Data (Processed) Memory Usage: 0.17 MB (0.0% of available memory)
+Data preprocessing and feature engineering runtime = 0.41s ...
+AutoGluon will gauge predictive performance using evaluation metric: 'accuracy'
+	To change this, specify the eval_metric parameter of Predictor()
+Automatically generating train/validation split with holdout_frac=0.1893939393939394, Train Rows: 2140, Val Rows: 500

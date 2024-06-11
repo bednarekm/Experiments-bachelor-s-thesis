@@ -1,0 +1,33 @@
+Fitting AutoMLPipelineFeatureGenerator...
+	Available Memory:                    10600.02 MB
+	Train Data (Original)  Memory Usage: 0.02 MB (0.0% of available memory)
+	Inferring data type of each feature based on column values. Set feature_metadata_in to manually specify special dtypes of the features.
+	Stage 1 Generators:
+		Fitting AsTypeFeatureGenerator...
+			Note: Converting 3 features to boolean dtype as they only contain 2 unique values.
+	Stage 2 Generators:
+		Fitting FillNaFeatureGenerator...
+	Stage 3 Generators:
+		Fitting IdentityFeatureGenerator...
+		Fitting CategoryFeatureGenerator...
+			Fitting CategoryMemoryMinimizeFeatureGenerator...
+	Stage 4 Generators:
+		Fitting DropUniqueFeatureGenerator...
+	Stage 5 Generators:
+		Fitting DropDuplicatesFeatureGenerator...
+	Types of features in original data (raw dtype, special dtypes):
+		('category', []) : 13 | ['checking_status', 'credit_history', 'purpose', 'savings_status', 'employment', ...]
+		('float', [])    :  1 | ['credit_amount']
+		('int', [])      :  6 | ['duration', 'installment_commitment', 'residence_since', 'age', 'existing_credits', ...]
+	Types of features in processed data (raw dtype, special dtypes):
+		('category', [])  : 11 | ['checking_status', 'credit_history', 'purpose', 'savings_status', 'employment', ...]
+		('float', [])     :  1 | ['credit_amount']
+		('int', [])       :  5 | ['duration', 'installment_commitment', 'residence_since', 'age', 'existing_credits']
+		('int', ['bool']) :  3 | ['num_dependents', 'own_telephone', 'foreign_worker']
+	0.2s = Fit runtime
+	20 features in original data used to generate 20 features in processed data.
+	Train Data (Processed) Memory Usage: 0.02 MB (0.0% of available memory)
+Data preprocessing and feature engineering runtime = 0.21s ...
+AutoGluon will gauge predictive performance using evaluation metric: 'accuracy'
+	To change this, specify the eval_metric parameter of Predictor()
+Automatically generating train/validation split with holdout_frac=0.2, Train Rows: 560, Val Rows: 140
